@@ -28,7 +28,7 @@ var AdminHomepage = React.createClass({
     return (
       <div className="home page admin">
         <h1>
-          Hello, admin user!
+          Admin Home
         </h1>
         <Link to='/createnew'>Create a new questionnaire</Link>
         <Link to='/responses'>View responses!</Link>

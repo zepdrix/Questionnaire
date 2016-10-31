@@ -79,6 +79,7 @@ var QuestionnaireForm = React.createClass({
   handleAddQuestion (e) {
     e.preventDefault();
     var allQuestions = [];
+
     Object.keys(this.state.questions).forEach((position) => {
       allQuestions.push(this.state.questions[position].label);
     });

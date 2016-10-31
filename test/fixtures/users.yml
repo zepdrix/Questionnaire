@@ -17,7 +17,11 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
+  username: 'admin'
+  administrator: true
+  session_token: 'asdf'
+  password_digest: 'sdfaf'
 # column: value
 #
 two: {}

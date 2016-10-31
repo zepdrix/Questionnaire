@@ -5,13 +5,13 @@ class UsersControllerTest < ActionController::TestCase
   #   assert true
   # end
 
-  test "index action should render index" do
-    get :index
+  test "show action should render show" do
+    get :show
     assert_response :success
   end
 
-  test "renders the index template" do
-      get :index
-      expect(response).to render_template("index")
+  test "renders the show template" do
+      get :show
+      expect(response).to render_template("show")
   end
 end

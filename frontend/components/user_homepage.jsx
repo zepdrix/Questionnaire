@@ -28,7 +28,7 @@ var UserHomepage = React.createClass({
     return (
       <div className="home page user">
         <h1>
-          Hello, normal user!
+          User Home
         </h1>
         <h3>
           Fill out any questionnaire below!
