@@ -1,0 +1,530 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ html, body, header, nav, h1, h3, a,
+ ul, li, strong, main, button, i,
+ section, img, div, h2, p, form,
+ fieldset, label, input, textarea,
+ span, article, footer, time, small {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font: inherit;
+   color: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   vertical-align: inherit;
+   box-sizing: inherit;
+   background: transparent;
+ }
+
+ ul {
+   list-style: none;
+ }
+
+ h3 {
+   font-size: 20px;
+   font-weight: bold;
+ }
+
+ input[type="password"],
+ input[type="email"],
+ input[type="text"],
+ input[type="submit"],
+ textarea,
+ button {
+
+   -webkit-appearance: none;
+   -moz-appearance: none;
+ }
+
+ button,
+ input[type="submit"], a {
+   cursor: pointer;
+ }
+
+ body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #E7EDD5;
+  height: 100%;
+ }
+
+ .nav-title {
+   font-size: 28px;
+   font-weight: bold;
+   margin-top: 10px;
+   margin-left: 10px;
+  float: left;
+ }
+
+
+ nav {
+   width: 100%;
+   height: 60px;
+   background-color: orange;
+   position: absolute;
+   top: 0px;
+ }
+
+
+ .nav-welcome {
+   margin-right: 10px;
+ }
+
+ .login-options li {
+   font-size: 20px;
+   float: right;
+   margin-top: 18px;
+ }
+
+ .login-options {
+   margin-right: 20px;
+ }
+
+ .page {
+   width: 100%;
+   margin-top: 80px;
+   margin-left: 20px;
+   margin-right: 20px;
+ }
+
+ h1 {
+   text-align: center;
+   font-size: 20px;
+   font-weight:bold;
+ }
+
+ .page.admin a {
+   width:90%;
+   text-align: center;
+   background-color: orange;
+   padding: 10px;
+   border-radius: 10px;
+   margin-left: 10px;
+   margin-top: 20px;
+   margin-right: 20px;
+   display: inline-block;
+ }
+
+.page input, .page textarea {
+  margin: 10px;
+  padding: 5px;
+  height: 30px;
+  background-color: lightgrey;
+}
+
+label {
+  font-weight: bold;
+}
+
+.questionnaire-form {
+  float:left;
+}
+
+.page a {
+  font-weight:bold;
+}
+
+.response-username {
+  font-size: 20px;
+  font-weight:bold;
+}
+
+.questionnaire-form button, .question-form button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: orange;
+  border-radius: 5px;
+}
+
+.question-form {
+  float:right;
+  margin-right: 20px;
+}
+
+.response-row > td:first-child {
+  width: 92px;
+}
+
+.response-item {
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+.response-index-item {
+  border-bottom: 1px solid black;
+  margin-top: 5px;
+  min-height: 40px;
+  display: block;
+}
+
+.questionnaire-index-item {
+  padding: 5px;
+  border: 1px solid black;
+  margin-top: 10px;
+  width: 70%;
+}
+
+.questionnaire-index {
+  margin-left: 40px;
+}
+
+.questionnaire {
+  margin-left: 50px;
+}
+
+.questionnaire textarea {
+  width: 70%;
+}
+
+.questionnaire label {
+  display:block;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.login-buttons {
+  display: block;
+  margin: 10px auto;
+  width: 230px;
+}
+
+.response-items, .response-index-items {
+  margin-left: 30px;
+}
+
+.login-button {
+  background-color: orange;
+  color: black;
+  margin: 5px;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.form-wrapper > * {
+  margin-left: 17px
+}
+
+.login-form label {
+  display: block;
+  padding: 5px;
+}
+
+input, textarea {
+  background-color: lightgrey;
+  border-radius: 4px;
+  color: black;
+  padding: 5px;
+  width: 300px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.questionnaire button {
+  width:56%;
+  text-align: center;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+  display: inline-block;
+
+}
+
+ @media only screen and (min-width: 768px) {
+   html, body, header, nav, h1, h3, a,
+   ul, li, strong, main, button, i,
+   section, img, div, h2, p, form,
+   fieldset, label, input, textarea,
+   span, article, footer, time, small {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     outline: 0;
+     font: inherit;
+     color: inherit;
+     text-align: inherit;
+     text-decoration: inherit;
+     vertical-align: inherit;
+     box-sizing: inherit;
+     background: transparent;
+   }
+
+   ul {
+     list-style: none;
+   }
+
+   h3 {
+     font-size: 20px;
+     font-weight: bold;
+   }
+
+   input[type="password"],
+   input[type="email"],
+   input[type="text"],
+   input[type="submit"],
+   textarea,
+   button {
+
+     -webkit-appearance: none;
+     -moz-appearance: none;
+   }
+
+   button,
+   input[type="submit"], a {
+     cursor: pointer;
+   }
+
+   body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #E7EDD5;
+    height: 100%;
+   }
+
+   .page {
+     margin-top: 80px;
+     width: 700px;
+     margin-left: auto;
+     margin-right: auto
+   }
+
+   a:hover, button:hover {
+     color: white;
+     transition: 0.1s;
+   }
+
+   nav {
+     width: 100%;
+     height: 60px;
+     background-color: orange;
+     position: absolute;
+     top: 0px;
+   }
+
+   h1 {
+     font-size: 24px;
+     font-weight: bold;
+   }
+
+
+   .nav-title {
+     display: block;
+     color: darkblue;
+     float: left;
+     font-weight: bold;
+     font-size: 30px;
+     margin-top: 10px;
+     margin-left: 20px;
+   }
+
+   .nav-welcome {
+     margin-right: 10px;
+   }
+
+   .login-options li {
+     font-size: 20px;
+     float: right;
+     margin-top: 15px;
+   }
+
+   .login-options {
+     margin-right: 20px;
+   }
+
+   .nav-container {
+     width: 900px;
+     margin: 0 auto;
+   }
+
+   .group:after {
+     content: "";
+     display: block;
+     clear: both;
+   }
+
+   .response-username {
+     float: left;
+     margin: 20px;
+     font-size: 24px;
+     width: 150px;
+   }
+
+   .response-item {
+     float: left;
+     margin-top: 20px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     border: 1px solid black;
+
+   }
+
+   .question-responses .question-response:not(:first-of-type) {
+     border-top: 1px solid black;
+   }
+
+   .question-responses {
+     width: 700px;
+     margin-left: 100px;
+     top: 0px;
+   }
+
+   .question-response {
+     padding: 10px;
+     margin-top: 10px;
+     margin-left: 100px;
+     top: 0px;
+     width: 80%;
+   }
+
+   .response-row > td:first-child {
+     width: 92px;
+   }
+
+   input, textarea {
+     background-color: lightgrey;
+     border-radius: 4px;
+     color: black;
+     padding: 5px;
+     width: 300px;
+   }
+
+   .page button {
+     background-color: orange;
+     display: block;
+     margin: 10px auto;
+     padding: 6px;
+     border-radius: 10px;
+   }
+
+  .question-form {
+    float: right;
+    margin-right: 30px;
+  }
+
+  .questionnaire-form {
+    float: left;
+  }
+
+  .question-form, .questionnaire-form {
+    margin-top: 10px;
+  }
+
+  .questionnaire-form-question {
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+
+  .question-form label, .questionnaire-form label{
+    font-size: 20px
+  }
+
+  .login-buttons {
+    display: block;
+    margin: 10px auto;
+    width: 230px;
+  }
+
+  .response-items, .response-index-items {
+    margin-left: 30px;
+  }
+
+  .login-button {
+    background-color: orange;
+    color: black;
+    margin: 5px;
+    padding: 6px;
+    border-radius: 10px;
+  }
+
+  .form-wrapper > * {
+    margin-left: 17px
+  }
+
+  .login-form label {
+    display: block;
+    padding: 5px;
+  }
+
+  .response-title-header {
+    width: 200px;
+  }
+  .response-number-header {
+    width: 250px;
+  }
+  .response-date-header {
+    width: 150px;
+  }
+  .response-numbers {
+    float: right;
+    margin-right: 100px;
+  }
+
+  .response-dates {
+    float: right;
+    margin-right: 80px;
+  }
+
+  .response-index-item {
+    border-bottom: 1px solid black;
+    margin-top: 5px;
+    min-height: 40px;
+    display: block;
+  }
+
+  .questionnaire-index-item {
+    padding: 5px;
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 600px;
+  }
+
+  .questionnaire-index {
+    margin-left: 40px;
+  }
+
+  .questionnaire {
+    margin-left: 50px;
+  }
+
+  .questionnaire .input {
+    width: 400px;
+  }
+
+  .questionnaire label {
+    display:block;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .questionnaire h1 {
+    display:block;
+    margin-bottom: 10px;
+  }
+
+  .page .questionnaire button {
+    margin-left: 16px;
+    width: 380px;
+  }
+
+  .form-error {
+    color: red;
+  }
+}
