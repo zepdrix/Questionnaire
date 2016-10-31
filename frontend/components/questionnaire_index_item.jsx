@@ -19,14 +19,14 @@ var QuestionnaireIndexItem = React.createClass({
     if (this.props.questionnaire.answered) {
       questionnaireLink = (
         <div to={ questionnaireUrl }>
-          <h3>{ this.props.questionnaire.title }</h3>
+          <h3 className="questionnaire-index-title">{ this.props.questionnaire.title }</h3>
           <p>Already Answered!</p>
         </div>
       );
     } else {
       questionnaireLink = (
         <Link to={ questionnaireUrl }>
-          <h3>{ this.props.questionnaire.title }</h3>
+          <h3 className="questionnaire-index-title">{ this.props.questionnaire.title }</h3>
         </Link>
       );
     }

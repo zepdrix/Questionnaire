@@ -77,6 +77,10 @@
    background-color: orange;
    position: absolute;
    top: 0px;
+   min-width: 480px;
+ }
+ .home.page h3.questionnaire-index-title {
+   margin-left: 0px;
  }
 
 
@@ -102,9 +106,13 @@
  }
 
  h1 {
-   text-align: center;
-   font-size: 20px;
+   text-align: left;
+   font-size: 28px;
    font-weight:bold;
+ }
+
+ .home.page h1 {
+   margin-left: 40px;
  }
 
  .page.admin a {
@@ -232,11 +240,12 @@ input, textarea {
 }
 
 h3 {
-  text-align: center;
+  text-align: left;
+  margin-left: 40px
 }
 
 .questionnaire button {
-  width:56%;
+  width:66%;
   text-align: center;
   background-color: orange;
   padding: 10px;
@@ -246,6 +255,31 @@ h3 {
   margin-right: 20px;
   display: inline-block;
 
+}
+
+.response-title-header {
+  width: 150px;
+}
+.response-number-header {
+  width: 150px;
+}
+.response-date-header {
+  width: 100px;
+}
+.response-numbers {
+  float: right;
+}
+
+.response-dates {
+  float: right;
+  margin-left: 10px;
+}
+
+.response-index-item {
+  border-bottom: 1px solid black;
+  margin-top: 5px;
+  min-height: 40px;
+  /*display: block;*/
 }
 
  @media only screen and (min-width: 768px) {
@@ -323,6 +357,13 @@ h3 {
      font-weight: bold;
    }
 
+   .home.page h3 {
+     margin-left: 40px;
+   }
+
+   .home.page h3.questionnaire-index-title {
+     margin-left: 0px;
+   }
 
    .nav-title {
      display: block;
