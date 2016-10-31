@@ -82,13 +82,14 @@ var QuestionnaireForm = React.createClass({
     Object.keys(this.state.questions).forEach((position) => {
       allQuestions.push(this.state.questions[position].label);
     });
+
     var currentLabel = this.state.currentQuestionLabel;
+
     if (currentLabel === undefined || currentLabel === '') {
       this.setState({ error: "Question can't be blank!"});
     } else if (allQuestions.indexOf(currentLabel) >= 0) {
       this.setState({ error: "Can't ask same question twice!" });
-    }
-     else {
+    } else {
       var position = this.state.currentQuestionPos;
       var questions = this.state.questions;
       questions[position] = { label: currentLabel };

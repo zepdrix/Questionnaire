@@ -77,12 +77,14 @@
    background-color: orange;
    position: absolute;
    top: 0px;
-   min-width: 480px;
+   min-width: 550px;
  }
  .home.page h3.questionnaire-index-title {
    margin-left: 0px;
  }
-
+ .questionnaire-form-question {
+   margin-top: 5px;
+ }
 
  .nav-welcome {
    margin-right: 10px;
@@ -132,6 +134,7 @@
   padding: 5px;
   height: 30px;
   background-color: lightgrey;
+  width: 100px;
 }
 
 label {
@@ -160,7 +163,7 @@ label {
 
 .question-form {
   float:right;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .response-row > td:first-child {
@@ -438,7 +441,7 @@ h3 {
      width: 92px;
    }
 
-   input, textarea {
+   .page input, .page textarea {
      background-color: lightgrey;
      border-radius: 4px;
      color: black;
@@ -470,6 +473,7 @@ h3 {
   .questionnaire-form-question {
     margin-left: 10px;
     margin-top: 5px;
+    width: 330px;
   }
 
   .question-form label, .questionnaire-form label{
