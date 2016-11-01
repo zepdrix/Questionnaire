@@ -1,6 +1,7 @@
 # Questionnaire
 
-[Questionnaire](http:/everplansquestionnaire.herokuapp.com)
+Live site: [Questionnaire](http:/everplansquestionnaire.herokuapp.com)<br/>
+Administrator credentials => username: 'admin', password: 'password123'
 
 # Summary
 
@@ -22,8 +23,11 @@ Questionnaire is a single page web application built with Ruby on Rails and usin
 
 All users have a :username, :administrator, :session_token, and :password_digest value. Admin users are defined by a true value in their :administrator column. Anyone can sign up and create a user but the :administrator column will default to false. BCrypt is used to store a password_digest and authenticate a user login.
 
+## Data Structure
 
-## Defining a questionnaire
+Users, Questionnaires, Questions, Responses, and QuestionResponses are the models used in this project. Questionnaires have many questions and belong to an author. Responses have many question_responses and belong to a questionnaire and a user.
+
+## Defining a Questionnaire
 
 Admin users have the ability to define a questionnaire on the front end with the QuestionnaireForm component. The component stores questions in an object and keeps track of the order of the questions with 'position' key.
 
@@ -92,7 +96,7 @@ end
 
 ```
 
-## Responding to a questionnaire
+## Responding to a Questionnaire
 
 Regular users can answer a questionnaire through the QuestionnaireShow component. Since questionnaires can have any number of questions, the component must input handlers that correspond to the number of questions on the fly. Each question in the questionnaire is rendered with a textarea that has an id attribute set to the question.id.
 
