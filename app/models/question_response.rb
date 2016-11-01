@@ -8,11 +8,11 @@
 #  response_text  :text
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  position       :integer          not null
 #
 
 class QuestionResponse < ActiveRecord::Base
-  validates :question_label, presence: true
-
   belongs_to :response
-  belongs_to :question
+
+  validates :question_label, :position, presence: true
 end

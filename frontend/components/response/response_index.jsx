@@ -1,9 +1,9 @@
 const React = require('react');
 
-const ResponseStore = require('../stores/response_store'),
-      ResponseActions = require('../actions/response_actions'),
-      QuestionnaireStore = require('../stores/questionnaire_store'),
-      QuestionnaireActions = require('../actions/questionnaire_actions');
+const QuestionnaireStore = require('../../stores/questionnaire_store'),
+      QuestionnaireActions = require('../../actions/questionnaire_actions'),
+      ResponseStore = require('../../stores/response_store'),
+      ResponseActions = require('../../actions/response_actions');
 
 const ResponseIndexItem = require('./response_index_item');
 
@@ -59,10 +59,7 @@ var ResponseIndex = React.createClass({
       </div>
 
     );
-
   }
-
-
 });
 
 

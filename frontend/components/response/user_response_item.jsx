@@ -27,7 +27,6 @@ var ResponseIndexItem = React.createClass({
               </td>
               <td>
                 { questionResponse.response_text }
-
               </td>
             </tr>
           </tbody>

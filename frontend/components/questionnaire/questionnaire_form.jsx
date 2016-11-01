@@ -1,8 +1,8 @@
 const React = require('react');
-const QuestionnaireActions = require('../actions/questionnaire_actions'),
-      QuestionnaireStore = require('../stores/questionnaire_store'),
-      ErrorStore = require('../stores/error_store'),
-      FormConstants = require('../constants/form_constants');
+const QuestionnaireActions = require('../../actions/questionnaire_actions'),
+      QuestionnaireStore = require('../../stores/questionnaire_store'),
+      ErrorStore = require('../../stores/error_store'),
+      FormConstants = require('../../constants/form_constants');
 
 var QuestionnaireForm = React.createClass({
   contextTypes: {
@@ -77,6 +77,9 @@ var QuestionnaireForm = React.createClass({
 
 
   handleAddQuestion (e) {
+    // Questions are added to the state's question object with a position counter (this.state.currentQuestionPos)
+    // so that questions can be rendered in correct order and deleted.
+
     e.preventDefault();
     var allQuestions = [];
 
@@ -100,6 +103,8 @@ var QuestionnaireForm = React.createClass({
   },
 
   removeQuestion (e) {
+    // Allows the user to delete any question in the state's question object.
+
     e.preventDefault();
     var int = parseInt(e.target.dataset.position);
     var questions = this.state.questions;
@@ -108,6 +113,11 @@ var QuestionnaireForm = React.createClass({
   },
 
   renderQuestions () {
+    // Renders all questions in the state's question object.
+    // Questions are ordered in the order they are created in.
+    // The Delete Question button stores the question's 'position' counter
+    // so that it can be removed accurately.
+
     var questionList;
     if (Object.keys(this.state.questions).length > 0) {
       questionList = Object.keys(this.state.questions).sort( (a, b) => { return a - b; }).map( (position, key) => {

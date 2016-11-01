@@ -3,13 +3,14 @@ const React = require('react'),
 
 var QuestionnaireIndexItem = React.createClass({
   shortenDescription () {
+    // Limit the description text length
+
     var shortenedDescription = this.props.questionnaire.description;
-    if (shortenedDescription && shortenedDescription.length > 140) {
-      shortenedDescription = shortenedDescription.slice(0, 140);
+    if (shortenedDescription && shortenedDescription.length > 240) {
+      shortenedDescription = shortenedDescription.slice(0, 240) + "...";
       return <p>{ shortenedDescription }</p>;
     } else if (shortenedDescription) {
       return <p>{ shortenedDescription }</p>;
-
     }
   },
 
@@ -17,6 +18,8 @@ var QuestionnaireIndexItem = React.createClass({
     var questionnaireUrl = `/questionnaires/${this.props.questionnaire.id}`;
     var questionnaireLink;
     if (this.props.questionnaire.answered) {
+      // Don't let user answer the same questionnaire twice
+
       questionnaireLink = (
         <div to={ questionnaireUrl }>
           <h3 className="questionnaire-index-title">{ this.props.questionnaire.title }</h3>
@@ -36,10 +39,8 @@ var QuestionnaireIndexItem = React.createClass({
         { this.shortenDescription() }
         <div>Number of questions: { this.props.questionnaire.questions.length }</div>
       </li>
-
     );
   }
-
 });
 
 

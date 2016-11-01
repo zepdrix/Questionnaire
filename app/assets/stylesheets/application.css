@@ -85,6 +85,7 @@
  .home.page h3.questionnaire-index-title {
    margin-left: 0px;
  }
+
  .questionnaire-form-question {
    margin-top: 5px;
  }
@@ -136,7 +137,7 @@
   padding: 5px;
   height: 30px;
   background-color: lightgrey;
-  width: 100px;
+  width: 100%;
 }
 
 label {
@@ -145,6 +146,7 @@ label {
 
 .questionnaire-form {
   float:left;
+  width: 40%;
 }
 
 .page a {
@@ -165,7 +167,8 @@ label {
 
 .question-form {
   float:right;
-  margin-right: 40px;
+  width: 40%;
+  margin-right: 50px;
 }
 
 .response-row > td:first-child {
@@ -372,7 +375,7 @@ h3 {
 
    .nav-title {
      display: block;
-     color: darkblue;
+     color: black;
      float: left;
      font-weight: bold;
      font-size: 30px;
@@ -395,7 +398,7 @@ h3 {
    }
 
    .nav-container {
-     width: 900px;
+     width: 800px;
      float: none;
      margin: 0 auto;
    }
@@ -419,7 +422,7 @@ h3 {
      padding-top: 10px;
      padding-bottom: 10px;
      border: 1px solid black;
-
+     width: 650px;
    }
 
    .question-responses .question-response:not(:first-of-type) {
@@ -437,7 +440,7 @@ h3 {
      margin-top: 10px;
      margin-left: 100px;
      top: 0px;
-     width: 80%;
+     width: 57%;
    }
 
    .response-row > td:first-child {
@@ -543,12 +546,17 @@ h3 {
     width: 600px;
   }
 
+  .questionnaire-index-item:hover {
+    border: 1px solid orange;
+    transition: 0.2s;
+  }
   .questionnaire-index {
     margin-left: 40px;
   }
 
   .questionnaire {
-    margin-left: 50px;
+    width: 450px;
+    margin: 0 auto;
   }
 
   .questionnaire .input {

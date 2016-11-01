@@ -1,10 +1,10 @@
 const React = require('react');
 const Link = require('react-router').Link;
 
-const QuestionnaireStore = require('../stores/questionnaire_store'),
-      QuestionnaireActions = require('../actions/questionnaire_actions');
+const QuestionnaireStore = require('../../stores/questionnaire_store'),
+      QuestionnaireActions = require('../../actions/questionnaire_actions');
 
-const QuestionnaireIndex = require('./questionnaire_index');
+const QuestionnaireIndex = require('../questionnaire/questionnaire_index');
 
 var AdminHomepage = React.createClass({
   getInitialState () {

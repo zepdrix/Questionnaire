@@ -22,4 +22,14 @@ class Questionnaire < ActiveRecord::Base
 
   accepts_nested_attributes_for :questions, allow_destroy: true
   validates :author_id, :title, presence: true
+  validate :only_admin_user_can_create_questionnaire, :require_at_least_one_question
+  private
+
+  def only_admin_user_can_create_questionnaire
+    errors.add(:base, "Questionnaire has to belong to an admin") unless User.find(author_id).admin?
+  end
+
+  def require_at_least_one_question
+    errors.add(:base, "You must provide at least one question") if questions.size < 1
+  end
 end

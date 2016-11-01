@@ -16,27 +16,11 @@ module.exports = {
     });
   },
 
-  updateUser (formData, successCb, errorCb) {
-    $.ajax({
-      url: `/api/users/${formData.get('user[id]')}`,
-      method: "PATCH",
-      contentType: false,
-      processData: false,
-      data: formData,
-      success: (resp) => {
-        successCb(resp);
-      },
-      error(xhr) {
-        errorCb(FormConstants.EDIT_USER_FORM, xhr.responseJSON, xhr.responseText);
-      }
-    });
-  },
-
   fetchCurrentUser (successCb) {
     $.ajax({
       url: "/api/session",
       method: "GET",
-      success(user) {
+      success: (user) => {
         successCb(user);
       },
       error: (xhr) => {
@@ -67,7 +51,7 @@ module.exports = {
       success: (resp) => {
         successCb(resp);
       },
-      error: function () {
+      error: () => {
         console.log("Logout error in SessionApiUtil#logoutUser");
       }
     });

@@ -10,6 +10,7 @@ var ResponseIndexItem = React.createClass({
 
   render () {
     var responseUrl = `/responses/${this.props.questionnaire.id}`;
+    var responseWord = this.props.questionnaire.responses.length === 1 ? 'response' : 'responses';
 
     return (
       <tr className="response-index-item group">
@@ -19,7 +20,7 @@ var ResponseIndexItem = React.createClass({
           </Link>
         </td>
         <td className="response-number-header">
-          <div className="response-numbers">{ this.props.questionnaire.responses.length } responses</div>
+          <div className="response-numbers">{ this.props.questionnaire.responses.length } { responseWord }</div>
         </td>
         <td className="response-date-header">
           <div className="response-dates">{ this.parseDate() }</div>

@@ -1,12 +1,13 @@
-const React = require('react'),
-      ErrorActions = require('../actions/error_actions'),
-      ErrorStore = require('../stores/error_store'),
-      FormConstants = require('../constants/form_constants'),
-      QuestionnaireStore = require('../stores/questionnaire_store'),
-      QuestionnaireActions = require('../actions/questionnaire_actions'),
-      ResponseActions = require('../actions/response_actions'),
-      ResponseStore = require('../stores/response_store'),
-      SessionStore = require('../stores/session_store');
+const React = require('react');
+
+const ErrorActions = require('../../actions/error_actions'),
+      ErrorStore = require('../../stores/error_store'),
+      FormConstants = require('../../constants/form_constants'),
+      QuestionnaireStore = require('../../stores/questionnaire_store'),
+      QuestionnaireActions = require('../../actions/questionnaire_actions'),
+      ResponseActions = require('../../actions/response_actions'),
+      ResponseStore = require('../../stores/response_store'),
+      SessionStore = require('../../stores/session_store');
 
 var QuestionnaireShow = React.createClass({
   contextTypes: {
@@ -32,12 +33,23 @@ var QuestionnaireShow = React.createClass({
     setTimeout(() => { ErrorActions.clearErrors(); }, 1000);
   },
 
+  componentWillReceiveProps () {
+    let questionnaireId = parseInt(this.props.params.questionnaireId);
+
+    QuestionnaireActions.fetchQuestionnaire(questionnaireId);
+    this.setState({ questionnaire: QuestionnaireStore.find(questionnaireId) });
+  },
+
   getQuestionnaire () {
+    // The questionnaire is set in the state and a callback defines the responseAttributes object in the state.
+
     var questionnaire = QuestionnaireStore.find(parseInt(this.props.params.questionnaireId));
     this.setState({ questionnaire: questionnaire }, this.defineResponseAttributes);
   },
 
   defineResponseAttributes () {
+    // Defines the responseAttributes object in the state
+
     var responseAttributes = {};
     for (var i = 0; i < this.state.questionnaire.questions.length; i++) {
       responseAttributes[this.state.questionnaire.questions[i].id] = { question_label:'', response_text:'' };
@@ -49,7 +61,7 @@ var QuestionnaireShow = React.createClass({
   },
 
   redirectIfResponseSaved () {
-    this.context.router.push("/home");
+    this.context.router.push("/");
   },
 
   formErrors () {
@@ -79,8 +91,10 @@ var QuestionnaireShow = React.createClass({
   },
 
   handleInput (e) {
-    e.preventDefault();
+    // Each question has a textarea field with the question's id, which is used to edit the
+    // corresponding object in the state's responseAttributes
 
+    e.preventDefault();
     var responseText = this.state.responseAttributes;
     responseText[e.target.id].response_text = e.target.value;
     this.setState({ responseAttributes: responseText });

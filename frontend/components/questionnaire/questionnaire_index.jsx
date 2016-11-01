@@ -1,7 +1,7 @@
 const React = require('react');
 
-const QuestionnaireStore = require('../stores/questionnaire_store'),
-      QuestionnaireActions = require('../actions/questionnaire_actions');
+const QuestionnaireStore = require('../../stores/questionnaire_store'),
+      QuestionnaireActions = require('../../actions/questionnaire_actions');
 
 const QuestionnaireIndexItem = require('./questionnaire_index_item');
 

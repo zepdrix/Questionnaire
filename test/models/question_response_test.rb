@@ -8,6 +8,7 @@
 #  response_text  :text
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  position       :integer          not null
 #
 
 require 'test_helper'

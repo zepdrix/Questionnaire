@@ -1,9 +1,9 @@
 const React = require('react');
-const ErrorStore = require('../stores/error_store');
-const ErrorActions = require('../actions/error_actions');
-const SessionStore = require('../stores/session_store');
-const SessionActions = require('../actions/session_actions');
-const FormConstants = require('../constants/form_constants');
+const ErrorStore = require('../../stores/error_store');
+const ErrorActions = require('../../actions/error_actions');
+const SessionStore = require('../../stores/session_store');
+const SessionActions = require('../../actions/session_actions');
+const FormConstants = require('../../constants/form_constants');
 
 
 var LoginForm = React.createClass({
@@ -26,6 +26,7 @@ var LoginForm = React.createClass({
     setTimeout(() => { ErrorActions.clearErrors(); }, 1000);
   },
 
+
   formErrors () {
     let errorString;
 
@@ -47,7 +48,8 @@ var LoginForm = React.createClass({
   },
 
   redirectIfLoggedIn () {
-    this.context.router.push("/home");
+    this.context.router.push("/");
+    this.props.redirect();
   },
 
   handleSubmit (e) {

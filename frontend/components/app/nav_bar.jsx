@@ -1,9 +1,9 @@
 const React = require('react');
 const Link = require('react-router').Link;
 const Modal = require('react-modal');
-const ModalStyle = require('../modal/style');
-const SessionStore = require('../stores/session_store');
-const SessionActions = require('../actions/session_actions');
+const ModalStyle = require('../../modal/style');
+const SessionStore = require('../../stores/session_store');
+const SessionActions = require('../../actions/session_actions');
 const LoginForm = require('./login_form');
 
 var NavBar = React.createClass({
@@ -17,7 +17,7 @@ var NavBar = React.createClass({
 
   componentDidMount () {
     this.sessionListener = SessionStore.addListener(this.onModalClose);
-    this.redirectListener = SessionStore.addListener(this.redirectIfLoggedIn);
+    this.redirectListener = SessionStore.addListener(this.redirectIfLoggedOut);
   },
 
   componentWillUnmount () {
@@ -34,8 +34,10 @@ var NavBar = React.createClass({
     ModalStyle.content.opacity = '100';
   },
 
-  redirectIfLoggedIn () {
-    this.context.router.push("/home");
+  redirectIfLoggedOut () {
+    if (!SessionStore.isUserLoggedIn()) {
+      this.context.router.push('/');
+    }
   },
 
   handleLogout (e) {
@@ -66,7 +68,7 @@ var NavBar = React.createClass({
     return (
       <nav className="group">
         <div className="nav-container group">
-          <div className="nav-title"><Link to="/home">Questionnaire</Link></div>
+          <div className="nav-title"><Link to="/">Questionnaire</Link></div>
           <ul className="login-options">
             <li>
               <button className="edit-user" onClick={ handleUser }>{ buttonText }</button>
@@ -76,7 +78,7 @@ var NavBar = React.createClass({
                 style={ ModalStyle }
                 onAfterOpen={ this.onModalOpen }>
                 <button onClick={ this.onModalClose }>[X] Close</button>
-                <LoginForm onModalClose={ this.onModalClose } currentUser={ this.state.currentUser }/>
+                <LoginForm onModalClose={ this.onModalClose } currentUser={ this.state.currentUser } />
               </Modal>
             </li>
             <li>

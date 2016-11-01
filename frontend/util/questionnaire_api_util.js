@@ -12,7 +12,7 @@ module.exports = {
       success: (resp) => {
         successCb(resp);
       },
-      error(xhr) {
+      error: (xhr) => {
         errorCb(FormConstants.CREATE_QUESTIONNAIRE_FORM, xhr.responseJSON, xhr.responseText);
       }
     });
@@ -30,6 +30,7 @@ module.exports = {
       }
     });
   },
+
   fetchAllQuestionnaires (successCb) {
     $.ajax({
       url: `/api/questionnaires`,

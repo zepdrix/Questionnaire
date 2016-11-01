@@ -10,5 +10,6 @@ json.responses do
   end
 end
 if current_user
+  # Don't let front end allow user to fill out the same questionnaire twice
   json.answered Response.response_exists?(current_user.id, questionnaire.id)
 end

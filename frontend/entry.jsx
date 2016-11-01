@@ -5,37 +5,19 @@ const React = require('react'),
       Router = ReactRouter.Router,
       Route = ReactRouter.Route,
       IndexRoute = ReactRouter.IndexRoute,
-      hashHistory = ReactRouter.hashHistory,
       browserHistory = ReactRouter.browserHistory;
 
 const SessionActions = require('./actions/session_actions'),
       SessionStore = require('./stores/session_store');
 
-const App = require('./components/app'),
-      QuestionnaireForm = require('./components/questionnaire_form');
-      const AdminHomepage = require('./components/admin_homepage');
-      const UserHomepage = require('./components/user_homepage');
-      const NotLoggedIn = require('./components/not_logged_in'),
-      QuestionnaireShow = require('./components/questionnaire_show'),
-      ResponseIndex = require('./components/response_index'),
-      ResponseUserIndex = require('./components/response_user_index');
-      // QuestionnaireIndex = require('./components/questionnaire_index');
-// const LoginForm = require('./components/login_form');
-
-// <IndexRoute component={ QuestionnaireForm }/>
-// <Route path='/questionnaires/:questionnaireId' component={ QuestionnaireShow }/>
-// <Route path='/questionnaires' component={ QuestionnaireIndex }/>
-const _renderPage = () => {
-  if (SessionStore.isUserLoggedIn()) {
-    if (SessionStore.isCurrentUserAdmin() ) {
-      return <AdminHomepage />;
-    } else {
-      return <UserHomepage />;
-    }
-  } else {
-    return <NotLoggedIn />;
-  }
-};
+const App = require('./components/app/app'),
+      QuestionnaireForm = require('./components/questionnaire/questionnaire_form'),
+      AdminHomepage = require('./components/homepage/admin_homepage'),
+      UserHomepage = require('./components/homepage/user_homepage'),
+      NotLoggedIn = require('./components/homepage/not_logged_in'),
+      QuestionnaireShow = require('./components/questionnaire/questionnaire_show'),
+      ResponseIndex = require('./components/response/response_index'),
+      ResponseUserIndex = require('./components/response/response_user_index');
 
 const _ensureLoggedIn = function (nextState, replace) {
   if (!SessionStore.isUserLoggedIn()) {
@@ -46,14 +28,12 @@ const _ensureLoggedIn = function (nextState, replace) {
 const appRouter = (
   <Router history={ browserHistory }>
     <Route path='/' component={ App }>
-      <Route path='/home' component={ _renderPage }/>
       <Route path='/responses' component={ ResponseIndex } onEnter={ _ensureLoggedIn }/>
       <Route path='/responses/:questionnaireId' component={ ResponseUserIndex } onEnter={ _ensureLoggedIn }/>
       <Route path='/questionnaires/:questionnaireId' component={ QuestionnaireShow } onEnter={ _ensureLoggedIn }/>
       <Route path='/createnew' component={ QuestionnaireForm } onEnter={ _ensureLoggedIn }/>
     </Route>
   </Router>
-
 );
 
 document.addEventListener("DOMContentLoaded", () => {

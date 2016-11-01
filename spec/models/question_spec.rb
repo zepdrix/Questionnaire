@@ -10,9 +10,10 @@
 #  updated_at       :datetime         not null
 #
 
-class Question < ActiveRecord::Base
-  belongs_to :questionnaire
-  has_many :question_responses
-  validates :position, :label, presence: true
-  validates :questionnaire_id, uniqueness: { scope: :label, message: "can't repeat questions!" }
+require 'rails_helper'
+
+describe Question do
+  it { should belong_to(:questionnaire) }
+  it { should validate_presence_of(:position) }
+  it { should validate_presence_of(:label) }
 end
